@@ -1,0 +1,27 @@
+{
+  "name": "minesweeper-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/N1C0RG/minesweeper-backend.git",
+  "author": "= <=>",
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node src/index.js"
+  },
+  "dependencies": {
+    "@koa/cors": "^5.0.0",
+    "dotenv": "^16.4.7",
+    "koa": "^2.15.3",
+    "koa-body": "^6.0.1",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^13.0.1",
+    "pg": "^8.13.1",
+    "sequelize": "^6.37.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7",
+    "sequelize-cli": "^6.6.2"
+  }
+}
