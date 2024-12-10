@@ -43,5 +43,20 @@ router.put('/:id', async (ctx) => {
   } 
 });
 
+router.delete('/:id', async (ctx) => {
+  try { 
+    const user = await ctx.orm.User.destroy({
+      where: { id: ctx.params.id }
+    });
+    
+    ctx.body = user;
+    ctx.status = 200;
+  } 
+  catch(error) {
+    ctx.status = 400; 
+    ctx.body = { error: error.message };
+  }
+}); 
+
 
 module.exports = router;

@@ -1,4 +1,13 @@
-## Ejecucion del servidor local 
+# Documentacion API 
+
+El enlace de la API es el siguente:    
+https://minesweeper-backend-ek95.onrender.com
+
+La Documentacion esta en: 
+https://documenter.getpostman.com/view/33559315/2sAYBd8Ty8
+
+
+# Ejecucion del servidor local 
 
 Se tiene que hacer la base de datos de postgres primero y el archivo .env, para finalmente correrel servidor 
 
