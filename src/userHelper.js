@@ -13,11 +13,11 @@ async function UserHelper() {
     const parsedUser = JSON.parse(JSON.stringify(users));
 
     if (Array.isArray(parsedUser)) {
-      parsedUser.sort((a, b) => a.username.localeCompare(b.username));  
+      parsedUser.sort((a, b) => b.score - a.score);  
     } else {
       throw new TypeError('Parsed user data is not an array');
     }
-    return parsedUser;
+    return parsedUser.slice(0, 10);
   } catch (error) {
     console.error('Error in UserHelper:', error);
     throw error;

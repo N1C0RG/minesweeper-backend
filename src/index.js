@@ -21,19 +21,18 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
   console.log('User connection:', socket.id);
 
-  socket.on("disconnect", () => {
-    console.log(`User disconnected: ${socket.id}`)
-  })
+  userHelper().then((data) => {
+    io.emit('receive_leaderBoard', data); 
+  }); 
 
   socket.on("update_leaderBoard", (data) => {
-    // userHelper().then((data) => {
-    //   //var newData = JSON.stringify(data); 
-    //   // io.emit('receive_leaderBoard', 'xxxxxx'); 
-    //   console.log(data);
-    //   //console.log(newData);
-    // }); 
-    io.emit('receive_leaderBoard', 'xxxxxx'); 
+    userHelper().then((data) => {
+      io.emit('receive_leaderBoard', data); 
+    }); 
 
+    socket.on("disconnect", () => {
+      console.log(`User disconnected: ${socket.id}`)
+    });
   }); 
 }); 
 
